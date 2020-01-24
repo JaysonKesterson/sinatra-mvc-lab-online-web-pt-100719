@@ -17,7 +17,7 @@ class PigLatinizer
       consonants = []
       consonants << word[0]
       new_word = word.gsub(word[0],"")
-      new_word.each do |letter|
+      new_word.split("").each do |letter|
         if ["a", "e", "i", "o", "u"].include?(letter) == false
           consonants << letter
         else
