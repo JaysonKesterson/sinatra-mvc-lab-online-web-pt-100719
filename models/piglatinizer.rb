@@ -16,11 +16,12 @@ class PigLatinizer
     else
       consonants = []
       consonants << word[0]
-        if ["a", "e", "i", "o", "u"].include?(word[1]) == false
-          consonants << word[1]
-          if ["a", "e", "i", "o", "u"].include?(word[2]) == false
-            consonants << word[2]
-          end
+      new_word = word.gsub(word[0],"")
+      new_word.each do |letter|
+        if ["a", "e", "i", "o", "u"].include?(letter) == false
+          consonants << letter
+        else
+          break
         end
       "#{word[consonants.length..-1] + consonants.join + "ay"}"
     end
